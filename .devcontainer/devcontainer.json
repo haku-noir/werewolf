@@ -1,0 +1,15 @@
+{
+    "name": "exec-python-scraping",
+    "dockerComposeFile": "docker-compose.yml",
+    "extensions": [
+        "ms-python.python",
+        "njpwerner.autodocstring",
+        "mosapride.zenkaku",
+        "octref.vetur",
+        "ms-python.vscode-pylance",
+        "streetsidesoftware.code-spell-checker"
+    ],
+    "service": "exec-python-scraping",
+    "workspaceFolder": "/workdir",
+    "shutdownAction": "stopCompose"
+}

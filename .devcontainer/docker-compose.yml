@@ -1,0 +1,9 @@
+version: "3"
+services:
+  exec-python-scraping:
+    build: .
+    command: sleep infinity
+    volumes:
+      - ../:/workdir
+    environment:
+      SHELL: "/bin/bash"
