@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     unzip
 
 # chrome driver
-ADD https://chromedriver.storage.googleapis.com/103.0.5060.53/chromedriver_linux64.zip /opt/chrome/
+ADD https://chromedriver.storage.googleapis.com/107.0.5304.62/chromedriver_linux64.zip /opt/chrome/
 RUN cd /opt/chrome/ && \
     unzip chromedriver_linux64.zip && \
     rm -f chromedriver_linux64.zip
