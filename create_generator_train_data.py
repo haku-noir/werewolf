@@ -1,7 +1,7 @@
 import pandas as pd
 
 def create_generator_train_data(from_file_path, to_file_path):
-  from_df = pd.read_csv(from_file_path, encoding='cp932')
+  from_df = pd.read_csv(from_file_path, index_col=0, encoding='cp932')
   train_data = []
   prev_message = from_df['message'][0]
   for message in from_df['message'][1:]:
