@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome import service as fs
 from selenium.webdriver.common.by import By
 import time
+from constant import VID_MAX, VID_MIN
 import pandas as pd
 
 CHROME_DRIVER = '/opt/chrome/chromedriver'
@@ -60,6 +61,4 @@ def download_messages(vid_min, vid_max):
 		df.to_csv('output/bbs/werewolf_bbs_day_info_'+str(i)+'.csv')
 
 if __name__ == '__main__':
-    VID_MIN = 146
-    VID_MAX = 146
     download_messages(VID_MIN, VID_MAX)
