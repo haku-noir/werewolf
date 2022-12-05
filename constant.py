@@ -1,2 +1,0 @@
-VID_MIN = 115
-VID_MAX = 145
