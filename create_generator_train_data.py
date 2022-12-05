@@ -12,6 +12,7 @@ def preprocess_text(text):
     text = text.replace("\n", "")
     return text
 
+
 def convert_generator_train_data(message_path, train_data_path):
     from_df = pd.read_csv(message_path, index_col=0)
     train_data = []
