@@ -1,16 +1,17 @@
 import os
 import pandas as pd
 
-from constant import FILTER_TRAIN_DATA_DIR, VID_MAX, VID_MIN
-from util import messages_path
+from constant import FILTER_TRAIN_DATA_DIR, USER_ID_LIST, VID_MAX, VID_MIN
+from util import messages_path, preprocess_text
 
 
-def create_filter_train_data(from_file_path, to_file_path, name):
+def create_filter_train_data(from_file_path, to_file_path):
     from_df = pd.read_csv(from_file_path, index_col=0)
-    to_df = from_df[from_df['name'] == name]
-    to_df = to_df.reset_index()
-    to_df = to_df.rename(columns={'index': 'message_id'})
-    to_df.to_csv(to_file_path)
+    train_data = []
+    for name, message in zip(from_df['name'], from_df['message']):
+        train_data.append([USER_ID_LIST.index(name), name, preprocess_text(message)])
+    to_df = pd.DataFrame(train_data, columns=['user_id', 'name', 'message'])
+    to_df.to_csv(to_file_path, mode='a', header=False, index=False)
 
 
 if __name__ == '__main__':
